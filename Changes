@@ -1,0 +1,5 @@
+Revision history for cPanel-PublicAPI
+
+1.0     2/24/2011
+        First version, Implement HTTP querying.
+
