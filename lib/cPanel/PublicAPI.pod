@@ -84,7 +84,7 @@ requiring much knowledge of how they work.
 
 =head2 Object Construction
 
-a cPanel::PublicAPI object is constructed with the new() method.
+A cPanel::PublicAPI object is constructed with the new() method.
 
   my $publicapi = cPanel::PublicAPI->new();
 
@@ -96,7 +96,7 @@ options for new() are specified as a hash reference, the following parameters ar
 
 =over
 
-=item * user - The username to authenticate as.
+=item * user - The username for authentication.
 
 =item * pass - The password to use for authentication.
 
@@ -110,7 +110,7 @@ options for new() are specified as a hash reference, the following parameters ar
 
 =item * usessl - 1 or 0, Indicates whether communication should be performed over SSL or not (default to 1).
 
-=item * error_log - Path to where you want debug and error logging information to be written to.  If this is not defined or the module is unable to open the path in question, it will default to STDERR.
+=item * error_log - Path to where you want debug and error logging information well be written.  If this is not defined or the module is unable to open the path in question, it will default to STDERR.
 
 =item * debug - Enables debug logging, which will place considerably more information into the error_log.
 
@@ -176,7 +176,7 @@ The meaning of these parameters is:
 
 =back
 
-For more information on what calls are available and how they can be referenced, please see the xml-api documentation at L<http://docs.cpanel.net/twiki/bin/view/AllDocumentation/AutomationIntegration/XmlApi>.
+For more information on what calls are available and how they can be referenced, please see the xml-api documentation at L<http://docs.cpanel.net/twiki/bin/view/SoftwareDevelopmentKit/XmlApi>.
 
 =head2 Querying cPanel's APIs
 
@@ -196,9 +196,9 @@ There are two distinct differences between API1 and API2:
 
 Within the context of the public api, calling a function from API1 or API2 will always return a hash, but the specific data returned from the API call will be contained within the 'data' key of the response.
 
-For more information on the differences between API1 and API2 please see the documentation: L<http://docs.cpanel.net/twiki/bin/view/DeveloperResources/ApiBasics/WebHome>
+For more information on the differences between API1 and API2 please see the documentation: L<http://docs.cpanel.net/twiki/bin/view/SoftwareDevelopmentKit/ApiIntroduction>
 
-For information on calling API1 and API2 direct via HTTP, please see: L<http://docs.cpanel.net/twiki/bin/view/AllDocumentation/AutomationIntegration/CallingAPIFunctions>
+For information on calling API1 and API2 direct via HTTP, please see: L<http://docs.cpanel.net/twiki/bin/view/SoftwareDevelopmentKit/CallingAPIFunctions>
 
 =head3 cpanel_api1_request()
 
@@ -256,9 +256,9 @@ The function used for querying URLs directly is api_request().  It will always r
 
 =item * $method - 'GET' or 'POST'
 
-=item * $formdata - The data you wish to pass to the URL
+=item * $formdata - The data to be passed to the URL
 
-=item * $headers - Any additional headers are to be passed with the request.  These can be either a flat string or as a hashref like {'headertitle' => 'headerdata'}
+=item * $headers - Any additional headers are to be passed with the request.  These can be either a flat string or as a hashref like C<{'headertitle' => 'headerdata'}>
 
 =back
 
@@ -302,7 +302,7 @@ Allows you to change the accesshash that your PublicAPI object is authenticating
 
 =back
 
-Allows you to construct formdata for an http query from a hash.  For Example:
+Allows you to construct form data for an http query from a hash.  For Example:
 
   $pubapi->format_http_query( { 'one' => '1', 'two' => 2 } );
 
@@ -316,7 +316,7 @@ would return:
 
 =back
 
-Allows you to construct headers for an http query from a hash.  For Example:
+Allows you to construct headers for an http query from a hash.  For example:
 
   $pubapi->format_http_headers( { 'Authorization' => 'Basic cm9vdDpsMGx1cnNtNHJ0IQ=='} );
 
