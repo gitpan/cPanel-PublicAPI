@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               cPanel-PublicAPI
-version:            1
+version:            1.001
 abstract:           A perl interface for interacting with cPanel
 author:
     - cPanel, Inc. <integration@cpanel.net>
